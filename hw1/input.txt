@@ -1,0 +1,19 @@
+10
+MOVEIN 2 3
+MOVEIN 3
+MOVEIN 2 3 5
+MOVEIN 13 2
+MOVEIN 2 4
+OBTAIN 2 1 3 one two three
+OBTAIN 2 2 2 uno duo
+OBTAIN 2 0 10 yi er san si wu liu qi ba jiu shi
+OBTAIN 2 3 1 hello
+MOVEOUT 2
+MOVEIN 2 3
+OBTAIN 2 0 1 one
+OBTAIN 2 1 1 two
+OBTAIN 2 2 1 three
+OUTPUT 2 1
+OUTPUT 2 2
+OUTPUT 2 0
+OUTPUT 2 3
