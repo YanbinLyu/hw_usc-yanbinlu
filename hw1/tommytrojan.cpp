@@ -30,8 +30,8 @@ int main(int argc, char* argv[])
 	  trojans[i] = NULL;
 	  possessions[i]=NULL;
   }
+  getline(input,curr);
   while(getline(input, curr)) {
-  	  cout << curr<<endl;
 	  stringstream ss;
 	  ss << curr;
 	  ss >> curr;
