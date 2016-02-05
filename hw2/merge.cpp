@@ -11,54 +11,99 @@ struct Node{
 };
 	
 
+
+
+
 Node* merge(Node*& first, Node*& second){
-	Node *tail=NULL;
-	Node *mer=NULL;
-	if(first.value>second.value){
+	Node* temp = NULL;
+	if(first->value > second->value){
+		temp=second;
 		if(second->next){
-			tail=merge(first,second->next);
-			mer = first;
-			mer->next = tail;
-			first->next=NULL;
-			return mer;
+			temp->next=merge(first,second->next);
+			second=NULL;
+			return temp;
 		}
 		else{
-			return first;
+			temp->next=first;
+			second=NULL;
+			first=NULL;
+			return temp;
 		}
-
-	}
+    }
 	else{
+		temp=first;
 		if(first->next){
-			tail=merge(first->next,second);
-			mer = second;
+			temp->next=merge(first->next,second);
+			first=NULL;
+			return temp;
+		}
+		else{
+			temp->next=second;
+			first=NULL;
+			second=NULL;
+			return temp;
+		}
+	}
+
+/*
+	Node *tail=NULL;
+	Node *mer=NULL;
+	int firstv = first->value;
+	int secondv = second->value;
+	if(firstv > secondv){
+		mer = second;
+		if(second->next){
+			tail=merge(first,second->next);
 			mer->next = tail;
 			second->next=NULL;
 			return mer;
 		}
 		else{
-			return second;
+			tail=first;
+			return tail;
+		}
+
+	}
+	else{
+		mer = first;
+		mer->next=second;
+		if(first->next){
+			tail=merge(first->next,second);
+			mer->next = tail;
+			first->next=NULL;
+			return mer;
+		}
+		else{
+			tail=second;
+			return tail;
 		}
 	}
-
-}
+*/
+};
 
 int main(){
-	Node a=0;
-	Node b=0;
-	Node c=0;
-	Node d=0;
+	Node* head1=NULL;
+	Node* head2=NULL;
+	Node a,b,c,d,e,f,g;
+	head1=&a;
+	head2=&e;
 	a.value=1;
-	a->next = b;
-	b.value = 3;
-	b->next = NULL;
-	c.value=2;
-	c->next = d;
-	d.value = 4;
-	d->next = NULL;
-	Node *k= merge(a,d);
-	cout << k->value;
+	b.value=2;
+	c.value=3;
+	d.value=4;
+	e.value=5;
+	f.value=6;
+	g.value=7;
+	a.next=&b;
+	b.next=&c;
+	c.next=&d;
+	d.next=NULL;
+	e.next=&f;
+	f.next=&g;
+	g.next=NULL;
+	Node *final=merge(head1,head2);
+	while(final->next){
+		cout<<final->value<<endl;
+		final=final->next;
+	}
 }
-
-
-
-
