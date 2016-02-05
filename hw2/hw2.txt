@@ -10,7 +10,7 @@ Both of them are Modified.
 e)
 README.md is Staged.
 The change of fun_problem.txt before is discarded and fun_problem.txt is Unmodified.
-The content of fun_problem.txt is Empty. 
+The content of fun_problem.txt is Empty. Because checkout would discard all of the changes made on the file. 
 f)
 README.md before is Staged and the new changes on it is not Staged. 
 And it appears README.md is Modified. 
@@ -37,6 +37,20 @@ d)
 Regardless of the operations in the "if", the total running time of n operations is 0(n).
 If i equals to size which is the product of 10 and a power of 2, the total running time will increases by 0(size)+0(1). Now, only concerning about the conditions that i equals to size. Then, the increased running time is the summation of 0(2^i*10+1) as i ranges from 0 to log2(n/10).This is a geometric series and the summation is 0(n).
 The final answer will be then 0(n)+0(n) ----- 0(n). 
+
+Problem 4
+1)
+a list of strings(names)
+I choose a list for this because the list is an ordered collection.
+2)
+a map of doubles (population)
+I choose a map for this because the zip code could be viewed as the key to access the data. And the order doesnt matter.
+3)
+a set of strings(names) 
+I choose a set for this because the names of students would be modified.We are able to check whether a student is in the set but not to change any members. 
+4)
+a map of double/integer arrays(grades)
+I choose a map for this because the ID and assignment number will be the keys to access the data and the grades could be easily checked. And the order doesnt matter. 
 
 Problem 5
 The linked list returned is 5,4,3,2,1.
