@@ -1,0 +1,51 @@
+Problem 1
+a)
+README.md is Unmodified
+b)
+README.md is Modified and fun_problem.txt is untracked.
+c)
+README.md and fun_problem.txt are Staged.
+d)
+Both of them are Modified.
+e)
+README.md is Staged.
+The change of fun_problem.txt before is discarded and fun_problem.txt is Unmodified.
+The content of fun_problem.txt is Empty. 
+f)
+README.md before is Staged and the new changes on it is not Staged. 
+And it appears README.md is Modified. 
+This is because that we have already add README.md before and it has been Staged while we did not commit it. 
+And then, the file gets changed (modified) and the new changes are not Staged. 
+
+Problem 3
+a)
+0(nlog(n));
+The inner loop takes 0(log2(n)) as j increases by twice(j*=2) each step. 
+The outer loop takes n as i increasess by one(i++) each loop.
+Then n*0(log2(n)) tends to be 0(n*log(n)) totally. 
+b)
+The inner k loop takes 0(log2(n)) as k increases by twice(k*=2) each step.
+The inner k loop will only be operated when j%i=0 and as j ranges from i to n-1, the total number of loops that the j loop will operate is (n-1)/i.
+The time then would be (n-i)/i*0(log2(n)).
+The outer loop will operate in the range of i 1 to n-1. The total time of operation would be the summation of (n-i)/i*0(log2(n)) which the value of ranges from 1 to n-1. 
+This could be viewed as a Harmonic series and the final answer is 0(n*log^2(n)).
+c)
+Regardless of the operations in the "if", the total running time of n operations is 0(n).
+If i equals to size which is a multiple of 10, the total running time will increases by 0(size)+0(1). Now, only concerning about the conditions that i equals to size. Then, the increased running time is the summation of 0(10i+1) as i ranges from 0 to n/10. This is an arithmetic series. The summation is 0(n^2)+0(n). 
+The final answer will be 0(n^2).
+d)
+Regardless of the operations in the "if", the total running time of n operations is 0(n).
+If i equals to size which is the product of 10 and a power of 2, the total running time will increases by 0(size)+0(1). Now, only concerning about the conditions that i equals to size. Then, the increased running time is the summation of 0(2^i*10+1) as i ranges from 0 to log2(n/10).This is a geometric series and the summation is 0(n).
+The final answer will be then 0(n)+0(n) ----- 0(n). 
+
+Problem 5
+The linked list returned is 5,4,3,2,1.
+The funcB will recurse until the tail of in2 and add Node in1 to the tail of in2. 
+For funcA, it will first recurse until reaching the tail of the linked list (5). Assign the tail to out first and use funcB to add the previous node to the tail of out with making the new added node to be tail. And jump out this recursion loop with returning out. 
+Every previous node will be added to the tail of the linked-list(start with out) and then become the new tail node. 
+Therefore, the final return node* out will be the start of the linked-list with reverse order of the initial linked-list. 
+
+
+
+
+
