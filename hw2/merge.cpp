@@ -45,42 +45,9 @@ Node* merge(Node*& first, Node*& second){
 		}
 	}
 
-/*
-	Node *tail=NULL;
-	Node *mer=NULL;
-	int firstv = first->value;
-	int secondv = second->value;
-	if(firstv > secondv){
-		mer = second;
-		if(second->next){
-			tail=merge(first,second->next);
-			mer->next = tail;
-			second->next=NULL;
-			return mer;
-		}
-		else{
-			tail=first;
-			return tail;
-		}
 
-	}
-	else{
-		mer = first;
-		mer->next=second;
-		if(first->next){
-			tail=merge(first->next,second);
-			mer->next = tail;
-			first->next=NULL;
-			return mer;
-		}
-		else{
-			tail=second;
-			return tail;
-		}
-	}
-*/
 };
-
+/*
 int main(){
 	Node* head1=NULL;
 	Node* head2=NULL;
@@ -107,3 +74,4 @@ int main(){
 		final=final->next;
 	}
 }
+*/
