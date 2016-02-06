@@ -29,42 +29,47 @@ int LListInt::size() const
  */
 void LListInt::insert(int loc, const int& val)
 {
-  Item *nitem = new Item();
   if(size_>0){
     if(loc>0&&loc<size_){
+      Item *nitem = new Item();
       Item *temp = getNodeAt(loc);
       nitem->val = val;
       nitem->prev = temp->prev; 
       temp->prev->next=nitem;
       temp->prev = nitem;
       nitem->next=temp;
-      ++size_;
+      size_=size_+1;
     }
     else if(loc ==size_){
+      Item *nitem = new Item();
       nitem->val = val;
       tail_->next=nitem;
       nitem->prev = tail_;
       nitem->next = NULL;
       tail_=nitem;
-      ++size_;
+      size_=size_+1;
+
     }
-  else if(loc == 0){
+    else if(loc == 0){
+      Item *nitem = new Item();
       Item *temp = getNodeAt(0);
       nitem->val=val;
       temp->prev=nitem;
       nitem->next=temp;
       nitem->prev=NULL;
       head_=nitem;
-      ++size_;
+      size_=size_+1;
+
     }
   }
   else{
+      Item *nitem = new Item();
       nitem->val=val;
       nitem->prev=NULL;
       nitem->next=NULL;
       head_=nitem;
       tail_=nitem;
-      ++size_;
+      size_=size_+1;
   }
 }
 
@@ -74,26 +79,28 @@ void LListInt::insert(int loc, const int& val)
 void LListInt::remove(int loc)
 {
   int s = size_-1;
-  if(loc>0&&loc<(s)){
-    Item *temp = getNodeAt(loc);
-    temp->next->prev=temp->prev;
-    temp->prev->next=temp->next;
-    delete[] temp;
-    --size_;
-  }
-  else if(loc == s){
-    Item *temp = getNodeAt(loc);
-    tail_=temp->prev;
-    temp->prev->next=NULL;
-    delete[] temp;
-    --size_;
-  }
-  else if(loc == 0){
-    Item *temp = getNodeAt(loc);
-    head_=temp->next;
-    temp->next->prev=NULL;
-    delete[] temp;
-    --size_;
+  if(size_>0){
+    if(loc>0&&loc<(s)){
+      Item *temp = getNodeAt(loc);
+      temp->next->prev=temp->prev;
+      temp->prev->next=temp->next;
+      delete temp;
+      size_=size_-1;
+    }
+    else if(loc == s){
+      Item *temp = getNodeAt(loc);
+      tail_=temp->prev;
+      temp->prev->next=NULL;
+      delete temp;
+      size_=size_-1;
+    }
+    else if(loc == 0){
+      Item *temp = getNodeAt(loc);
+      head_=temp->next;
+      temp->next->prev=NULL;
+      delete temp;
+      size_=size_-1;
+    }
   }
 
 
