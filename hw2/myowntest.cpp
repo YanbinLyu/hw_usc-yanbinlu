@@ -160,6 +160,14 @@ int main() {
     	cout << "FAIL: List has size " << list->size() << " after one insertion.";
     	cout << endl;
   	}
-
- 
+  	list->remove(0);
+  	if(list->size() == 0){
+  		cout << "SUCCESS: List has size 0 after one clear." << endl;
+  	} 
+  	else {
+    	cout << "FAIL: List has size " << list->size() << " after one insertion.";
+    	cout << endl;
+  	}
+  	delete list;
+  	return 0;
 }
